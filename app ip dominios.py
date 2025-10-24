@@ -7,10 +7,9 @@ import shutil
 import threading
 import subprocess
 import re
-# Eliminadas imports de scapy/nmap no utilizadas para evitar dependencias innecesarias
 
 # Lista de puertos comunes
-# Mantengo la lista original y la uno con el rango 1-200 para obtener los ~200 puertos más comunes.
+# lista original y la uno con el rango 1-200 para obtener los ~200 puertos más comunes.
 puertos_comunes_original = [21, 22, 23, 25, 53, 67, 68, 80, 110, 123, 137, 138, 139, 143, 161, 162, 389, 443, 445, 514, 587, 636, 993, 995, 1080, 1433, 1521, 1723, 1812, 1813, 2082, 2083, 2086, 2087, 2095, 2096, 2222, 2444, 2483, 2484, 25565, 27017, 27018, 28017, 3000, 3306, 8001, 8008, 8080, 8081, 8088, 8181, 8282, 8443, 8888, 9000, 9001, 9090, 9091, 9200, 9418, 9999, 10000, 10080, 10081, 10082, 10083, 10084, 10085, 10086, 10087, 10088, 10089, 10090, 10091, 10092, 10093, 10094, 10095, 10096, 10097, 10098, 10099, 10100]
 # Crear la lista ampliada (1..200) y unir con la original, eliminando duplicados y ordenando.
 puertos_comunes = sorted(set(puertos_comunes_original).union(set(range(1, 201))))
